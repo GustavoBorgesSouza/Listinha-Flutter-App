@@ -7,6 +7,6 @@ class HomeModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const HomePage()),
         ChildRoute('/edit',
-            child: (context, args) => const EditTaskBoardPage()),
+            child: (context, args) => const EditTaskBoardPage(),),
       ];
 }
