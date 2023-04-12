@@ -26,8 +26,9 @@ class ConfigurationServiceImpl implements ConfigurationService {
   void saveConfiguration(String themeModeName, DateTime? syncDate) {
     final model = getConfiguration();
     realm.write(() {
-      model.syncDate = syncDate;
-      model.themeModeName = themeModeName;
+      model
+        ..syncDate = syncDate
+        ..themeModeName = themeModeName;
     });
   }
 }

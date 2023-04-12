@@ -11,4 +11,8 @@ LocalConfiguration config = Configuration.local(
   initialDataCallback: (realm) {
     realm.add(ConfigurationModel('system'));
   },
+  //sempre que mudar algo no realm como queria descrcao para titulo
+  //é recomendado atualizar a versão aqui para evitar erro nos aparlhos
+  //que estão usando uma versão antiga.
+  schemaVersion: 2,
 );

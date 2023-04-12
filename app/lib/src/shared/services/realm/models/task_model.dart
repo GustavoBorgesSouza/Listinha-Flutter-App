@@ -14,7 +14,7 @@ class _Task {
 class _TaskBoard {
   @PrimaryKey()
   late Uuid id;
-  late String description;
+  late String title2;
   late List<_Task> tasks;
   bool enable = true;
 }
