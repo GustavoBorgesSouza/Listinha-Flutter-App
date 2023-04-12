@@ -68,7 +68,7 @@ class TaskBoard extends _TaskBoard
 
   TaskBoard(
     Uuid id,
-    String description, {
+    String title, {
     bool enable = true,
     Iterable<Task> tasks = const [],
   }) {
@@ -78,7 +78,7 @@ class TaskBoard extends _TaskBoard
       });
     }
     RealmObjectBase.set(this, 'id', id);
-    RealmObjectBase.set(this, 'description', description);
+    RealmObjectBase.set(this, 'title', title);
     RealmObjectBase.set(this, 'enable', enable);
     RealmObjectBase.set<RealmList<Task>>(this, 'tasks', RealmList<Task>(tasks));
   }
@@ -91,11 +91,9 @@ class TaskBoard extends _TaskBoard
   set id(Uuid value) => RealmObjectBase.set(this, 'id', value);
 
   @override
-  String get description =>
-      RealmObjectBase.get<String>(this, 'description') as String;
+  String get title => RealmObjectBase.get<String>(this, 'title') as String;
   @override
-  set description(String value) =>
-      RealmObjectBase.set(this, 'description', value);
+  set title(String value) => RealmObjectBase.set(this, 'title', value);
 
   @override
   RealmList<Task> get tasks =>
@@ -122,7 +120,7 @@ class TaskBoard extends _TaskBoard
     RealmObjectBase.registerFactory(TaskBoard._);
     return const SchemaObject(ObjectType.realmObject, TaskBoard, 'TaskBoard', [
       SchemaProperty('id', RealmPropertyType.uuid, primaryKey: true),
-      SchemaProperty('description', RealmPropertyType.string),
+      SchemaProperty('title', RealmPropertyType.string),
       SchemaProperty('tasks', RealmPropertyType.object,
           linkTarget: 'Task', collectionType: RealmCollectionType.list),
       SchemaProperty('enable', RealmPropertyType.bool),
