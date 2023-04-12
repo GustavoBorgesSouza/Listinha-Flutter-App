@@ -68,7 +68,7 @@ class TaskCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final title = board.title;
+    final title = board.title2;
     final progress = getProgress(board.tasks);
     final progressText = getProgressText(board.tasks);
 
